@@ -2,7 +2,6 @@
 - name: Collecting facts
   hosts: koditest
   gather_facts: yes
-  tasks:
-
-    - include: roles/nfs.yml
+  roles:
+  - nfs
 #include others as you need them
