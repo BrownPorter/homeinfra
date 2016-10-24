@@ -1,0 +1,5 @@
+[kodi]
+10.0.0.67 ansible_user=root 
+
+[koditest]
+10.0.0.62 ansible_user=root 
