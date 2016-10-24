@@ -4,5 +4,5 @@
   gather_facts: yes
   tasks:
 
-    - include: roles/nfs
+    - include: roles/nfs.yml
 #include others as you need them
