@@ -1,6 +1,6 @@
 ---
 - name: Collecting facts
-  hosts: kositest
+  hosts: koditest
   gather_facts: yes
   tasks:
 
