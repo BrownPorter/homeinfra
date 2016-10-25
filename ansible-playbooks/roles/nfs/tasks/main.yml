@@ -22,16 +22,10 @@
   tags:
     - nfs
 
-- name: Ensure rpcbind is running (CentOS)
-  action: service name=rpcbind state=started enabled=yes
-
 - name: Ensure portmap is running (Ubuntu prior to Trusty Thar)
   action: service name=portmap state=started enabled=yes
 
 - name: Ensure rpcbind is running (Ubuntu Trusty Tahr or newer)
-  action: service name=rpcbind state=started enabled=yes
-
-- name: Ensure rpcbind is running (Debian)
   action: service name=rpcbind state=started enabled=yes
 
 - name: Ensure nfs directory exists
@@ -39,12 +33,12 @@
   tags:
     - nfs
 
-#- shell: if [ -z "$nfsoptions" ]; then  echo rw,sync,nfsvers=3; else echo $nfsoptions; fi
-#  register: _nfsopts
-#  sudo: false
-#  connection: local
-#  tags:
-#    - nfs
+- shell: if [ -z "$nfsoptions" ]; then  echo rw,sync,nfsvers=3; else echo $nfsoptions; fi
+  register: _nfsopts
+  sudo: false
+  connection: local
+  tags:
+    - nfs
 
 - name: configure /etc/fstab on clients
   action: mount name=/nfs src=10.0.0.4:/nfs/Media fstype=nfs opts={{_nfsopts.stdout}} state=mounted
