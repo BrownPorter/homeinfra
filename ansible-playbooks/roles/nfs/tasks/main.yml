@@ -19,25 +19,20 @@
 
 - name: install nfs client
   action: yum pkg=nfs-utils state=present
-  when: is_centos
   tags:
     - nfs
 
 - name: Ensure rpcbind is running (CentOS)
   action: service name=rpcbind state=started enabled=yes
-  when: is_centos
 
 - name: Ensure portmap is running (Ubuntu prior to Trusty Thar)
   action: service name=portmap state=started enabled=yes
-  when: is_ubuntu|bool and ansible_lsb.major_release is defined and ansible_lsb.major_release|int < 14
 
 - name: Ensure rpcbind is running (Ubuntu Trusty Tahr or newer)
   action: service name=rpcbind state=started enabled=yes
-  when: is_ubuntu|bool and ansible_lsb.major_release is defined and ansible_lsb.major_release|int >= 14
 
 - name: Ensure rpcbind is running (Debian)
   action: service name=rpcbind state=started enabled=yes
-  when: is_debian
 
 - name: Ensure nfs directory exists
   action: file path=/nfs state=directory
