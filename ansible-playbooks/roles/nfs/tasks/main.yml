@@ -14,7 +14,6 @@
 
 - name: install nfs client
   action: apt pkg=nfs-common state=present
-  when: is_debian_or_ubuntu
   tags:
     - nfs
 
