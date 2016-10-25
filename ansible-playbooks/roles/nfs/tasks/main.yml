@@ -17,13 +17,8 @@
   tags:
     - nfs
 
-- name: install nfs client
-  action: yum pkg=nfs-utils state=present
-  tags:
-    - nfs
-
-- name: Ensure portmap is running (Ubuntu prior to Trusty Thar)
-  action: service name=portmap state=started enabled=yes
+#- name: Ensure portmap is running (Ubuntu prior to Trusty Thar)
+#  action: service name=portmap state=started enabled=yes
 
 - name: Ensure rpcbind is running (Ubuntu Trusty Tahr or newer)
   action: service name=rpcbind state=started enabled=yes
