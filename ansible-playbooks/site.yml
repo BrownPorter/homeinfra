@@ -1,6 +1,6 @@
 ---
 - name: Collecting facts
-  hosts: koditest
+  hosts: all
   gather_facts: yes
   roles:
   - nfs
