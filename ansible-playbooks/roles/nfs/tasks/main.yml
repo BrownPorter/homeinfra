@@ -55,4 +55,4 @@
 - name: configure /etc/fstab on clients
   action: mount name=/nfs src=10.0.0.4:/nfs/Media fstype=nfs opts={{_nfsopts.stdout}} state=mounted
   tags:
-- nfs
+    - nfs
