@@ -1,2 +1,2 @@
-sudo ansible-playbook -i "localhost," -c local site.yml
+ansible-playbook -i "localhost," -c local site.yml
 ansible-playbook -l koditest -i localhost site.yml
