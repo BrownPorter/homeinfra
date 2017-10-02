@@ -16,7 +16,7 @@
 	<concurrentBuild>false</concurrentBuild>
 	<builders>
 		<hudson.tasks.Shell>
-			<command>curl --data-binary '{ "jsonrpc": "2.0", "method": "VideoLibrary.Scan", "id": "mybash"}' -H 'content-type: application/json;' http://kodi:bambino@10.0.0.67:8080/jsonrpc</command>
+			<command>curl --data-binary '{ "jsonrpc": "2.0", "method": "VideoLibrary.Scan", "id": "mybash"}' -H 'content-type: application/json;' http://kodi:PASSWORD@10.0.0.67:8080/jsonrpc</command>
 		</hudson.tasks.Shell>
 	</builders>
 	<publishers/>
