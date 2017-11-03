@@ -38,7 +38,7 @@
          disk1:
            size_gb: 10
            type: thin
-           datastore: "Local Datastore"
+           datastore: "LocalDatastore"
        vm_nic:
          nic1:
            type: vmxnet3
@@ -47,8 +47,8 @@
        vm_hardware:
          memory_mb: 512
          num_cpus: 1
-         osid: rhel6_64Guest
+         osid: "centos7_64Guest"
          scsi: paravirtual
-#         vm_cdrom:
-#           type: "iso"
-#           iso_path: "iso/CentOS-7-x86_64-Minimal-1708(1).iso"
+         vm_cdrom:
+           type: "iso"
+           iso_path: "LocalDatastore/iso/CentOS-7-x86_64-Minimal-1708.iso"
