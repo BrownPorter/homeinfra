@@ -1,0 +1,5 @@
+Provision VM with kickstarter file
+Create snap with nothing besides git and ansible
+Script to revert to snap
+Create jenkins pipeline (as code) with revert to snap as first step
+Work on Usenet Stuff
